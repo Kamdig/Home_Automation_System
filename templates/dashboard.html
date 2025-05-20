@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sensor Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f4f6fa; }
+        .card { background: white; padding: 20px 30px; border-radius: 12px; box-shadow: 0 2px 8px #ccc; width: 350px; }
+        h1 { font-size: 2em; }
+        .label { color: #888; font-size: 1em; }
+        .value { font-weight: bold; font-size: 1.4em }
+    </style>
+</head>
+<body>
+    <form action="{{ url_for('logout') }}" method="get" style="text-align: right; margin-bottom: 10px;">
+        <button type="submit" style="padding: 8px 12px; background: #d33; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Logout
+        </button>
+    </form>
+    <h1>Sensor Dashboard</h1>
+    <div class="card">
+        <div><span class="label">Distance:</span> <span class="value">{{ data.distance }}</span> cm</div>
+        <div><span class="label">Temperature:</span> <span class="value">{{ data.temperature }}</span> °C</div>
+        <div><span class="label">ADC Value:</span> <span class="value">{{ data.adc_value }}</span></div>
+        <div><span class="label">Voltage:</span> <span class="value">{{ data.voltage }}</span> V</div>
+    </div>
+    <script>
+        setTimeout(function() { window.location.reload(); }, 10000);
+    </script>
+</body>
+</html>
