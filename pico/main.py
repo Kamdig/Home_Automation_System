@@ -79,7 +79,7 @@ while True:
     distance = getDistance()
     adcValue, voltage, tempC = getTemp()
     print("Distance: %.2f cm | ADC value: %d | Voltage: %.2f V | Temperature: %.2f C" %
-          (distance, adcValue, voltage, tempC))
+        (distance, adcValue, voltage, tempC))
     if lcd:
         lcd.clear()
         lcd.move_to(0, 0)
